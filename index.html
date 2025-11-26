@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مزرعة العتي - Al Otti Farm</title>
+    
+    <!-- Tailwind CSS compiled locally -->
+    <link rel="stylesheet" href="dist/style.css">
+    
+    <!-- Google Fonts for Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        h1, h2 {
+            font-family: 'Amiri', serif;
+        }
+        
+        /* Background with blur effect */
+        .bg-container {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .bg-container::before {
+            content: '';
+            position: absolute;
+            inset: -20px;
+            background: url('website background.png') center center / cover no-repeat;
+            filter: blur(4px);
+        }
+        
+        .bg-container::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(120, 80, 40, 0.3) 0%, rgba(60, 40, 20, 0.4) 100%);
+        }
+        
+        /* Glass card effect */
+        .glass-card {
+            background: rgba(255, 250, 240, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        /* Trim excess space above/below logo without editing asset */
+        .logo-clip img {
+            clip-path: inset(10% 0);
+        }
+        
+        /* Smooth fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInDelay {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        
+        .animate-fade-in-delay {
+            opacity: 0;
+            animation: fadeInDelay 0.6s ease-out 0.15s forwards;
+        }
+        
+        /* Vibrant button styles */
+        .btn-store {
+            background: linear-gradient(135deg, #d97706 0%, #b45309 50%, #92400e 100%);
+            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.4), inset 0 1px 0 rgba(255,255,255,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-store::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .btn-store:hover::before {
+            left: 100%;
+        }
+        
+        .btn-store:hover {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #b45309 100%);
+            box-shadow: 0 6px 25px rgba(217, 119, 6, 0.5), inset 0 1px 0 rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+        
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #22c55e 0%, #16a34a 50%, #15803d 100%);
+            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4), inset 0 1px 0 rgba(255,255,255,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-whatsapp::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .btn-whatsapp:hover::before {
+            left: 100%;
+        }
+        
+        .btn-whatsapp:hover {
+            background: linear-gradient(135deg, #4ade80 0%, #22c55e 50%, #16a34a 100%);
+            box-shadow: 0 6px 25px rgba(34, 197, 94, 0.5), inset 0 1px 0 rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex items-center justify-center p-4">
+    
+    <!-- Blurred Background -->
+    <div class="bg-container"></div>
+    
+    <!-- Main Card Container -->
+    <div class="max-w-md w-full glass-card rounded-3xl shadow-2xl animate-fade-in">
+        
+        <!-- Top accent bar -->
+        <div class="h-1.5 bg-gradient-to-r from-amber-700 via-amber-500 to-amber-700"></div>
+        
+        <!-- Main content area -->
+        <div class="px-8 pt-6 pb-8">
+            
+            <!-- Logo Section - Clean, no container -->
+            <div class="mt-0 mb-2 flex justify-center overflow-visible logo-clip">
+                <img src="black brand logo with no background.svg" alt="Al Otti Farm Logo" style="width: 135%; max-width:600px; height: auto; transform-origin: top center;">
+            </div>
+            
+            <!-- Welcome Text -->
+            <h1 class="text-center mb-1 text-3xl font-bold text-amber-900">
+                أهلاً وسهلاً
+            </h1>
+            
+            <!-- Decorative divider - geometric line -->
+            <div class="flex items-center justify-center gap-3 mb-4">
+                <div class="h-px w-16 bg-gradient-to-r from-transparent to-amber-500"></div>
+                <div class="w-2 h-2 bg-amber-500 rotate-45"></div>
+                <div class="h-px w-16 bg-gradient-to-l from-transparent to-amber-500"></div>
+            </div>
+            
+            <!-- Subtitle -->
+            <p class="text-center mb-8 text-amber-800 text-lg font-semibold">
+                موجودين لخدمتكم
+            </p>
+            
+            <!-- Buttons Container -->
+            <div class="space-y-4 pb-2">
+                
+                <!-- Store Button - Vibrant -->
+                <a href="YOUR_STORE_URL" 
+                   class="btn-store block w-full text-white py-4 px-6 rounded-xl font-bold text-lg text-center transition-all duration-300 animate-fade-in">
+                    زيارة المتجر
+                </a>
+                
+                <!-- WhatsApp Button - Vibrant -->
+                <a href="https://wa.me/YOUR_PHONE_NUMBER" 
+                   class="btn-whatsapp block w-full text-white py-4 px-6 rounded-xl font-bold text-lg text-center transition-all duration-300 animate-fade-in-delay">
+                    تواصل واتساب
+                </a>
+                
+            </div>
+            
+            <!-- Decorative footer element - geometric dots -->
+            <div class="mt-8 flex justify-center gap-3">
+                <div class="w-1.5 h-1.5 bg-amber-400 rounded-full"></div>
+                <div class="w-1.5 h-1.5 bg-amber-500 rounded-full"></div>
+                <div class="w-1.5 h-1.5 bg-amber-400 rounded-full"></div>
+            </div>
+            
+            <!-- Footer -->
+            <p class="text-center mt-4 text-sm text-amber-900 font-semibold">
+                مزرعة العتي
+            </p>
+            <p class="text-center text-xs text-amber-700 mt-1">
+                Al Otai Farm
+            </p>
+            
+        </div>
+        
+        <!-- Bottom accent bar -->
+        <div class="h-1.5 bg-gradient-to-r from-amber-700 via-amber-500 to-amber-700"></div>
+        
+    </div>
+    
+</body>
+</html>
